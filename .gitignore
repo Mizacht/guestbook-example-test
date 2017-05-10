@@ -3,8 +3,7 @@ vendor
 composer.phar
 
 #database
-.database
-.db
+database.db
 storage/*
 
 # IntelliJ - PhpStorm and PyCharm
