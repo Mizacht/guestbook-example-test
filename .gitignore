@@ -2,6 +2,11 @@
 vendor
 composer.phar
 
+#database
+.database
+.db
+storage/*
+
 # IntelliJ - PhpStorm and PyCharm
 .idea
 *.ipr
