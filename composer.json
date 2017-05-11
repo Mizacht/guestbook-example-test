@@ -9,6 +9,12 @@
             "email": "keybl4de13@gmail.com"
         }
     ],
+
+    "autoload": {
+        "psr-4": {
+        "simpan\\": "src"
+        }
+    },
     "require": {
         "catfan/medoo": "^1.4"
     },

@@ -5,15 +5,21 @@ require_once '../vendor/autoload.php';
 echo "Hello World";
 
 //Using Medoo namespace
-use Medoo\medoo;
+use Medoo\Medoo;
 
-$database = new medoo([
+$database = new Medoo([
     'database_type' => 'sqlite',
     'database_file' => '../storage/database.db'
 ]);
 
-dump($database);
+$comment = new simpan\Comment($database);
+$comment->setEmail('bruno@skvorc.me')
+->setName('Bruno Skvorc')
+->setComment('It works!')
+->setComment('Hooray! Saving comments works!')
+->save();
 
+dump($database);
 ?>
 
 <!doctype html>
