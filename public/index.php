@@ -27,11 +27,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $v->validate($_POST);
 
     if ($result->isValid()) {
-        echo "Submission is good!";
-    } else {
-        dump($result->getMessages());
+        try {
+            $comment
+            ->setName($_POST['name'])
+            ->setEmail($_POST['email'])
+            ->setComment($_POST['comment'])
+            ->save();
+            header('Location: /');
+            return;
+            } catch (\Exception $e) {
+            die($e->getMessage()); 
+            }
+        }else{
+            dump($result->getMessages());
+            }
+        
     }
-}
 ?>
 
 <!doctype html>
